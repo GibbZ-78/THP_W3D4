@@ -47,17 +47,28 @@ def mairiechristmas
   # puts get_cities_urls($url1)
   # puts
   
+  puts
+  print "Collecting URLs"
   get_cities_urls($url1).each do |city|
     my_townhall_name.push(city[0])
     my_townhall_mail.push(get_townhall_mail(city[1]))
+    print "."
   end
 
+  puts
+  puts
+  print "Building hash"
   for i in 0...my_townhall_name.length do
     my_townhall_hash = Hash.new
     my_townhall_hash[my_townhall_name[i]] = my_townhall_mail[i] # On pourrait transformer les clés String en Symbols
     my_townhall_tab.push(my_townhall_hash)
+    print "."
   end
 
+  puts
+  puts
+  puts "Here is the final result :"
+  puts
   puts my_townhall_tab
 
 end
