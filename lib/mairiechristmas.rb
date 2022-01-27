@@ -27,7 +27,7 @@ def get_cities_urls(base_url)
   scrap_townhall = page_base.xpath("//*/a[@class='lientxt']") # version simplifiée
   scrap_townhall.each do |lien|
     lien1 = lien.text.downcase.gsub(" ","-")
-    tab_cities_urls.push([lien1, $url2+lien1]) 
+    tab_cities_urls.push([lien1, $url2+lien1+".html"]) 
   end
   # puts tab_cities_urls
   return tab_cities_urls
